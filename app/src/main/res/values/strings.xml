@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">SmsScheduler</string>
+
+    <string name="contact_us">Contact us</string>
+
+    <string name="emailId">_your name_@gmail.com</string>
+    <string name="designedBy">Designed by _your name_</string>
+    <string name="developedBy">Developed by _your name_</string>
+
+    <string name="uiMode">uiMode</string>
+    <string name="night_mode">Night mode</string>
+    <string name="light_mode">Light mode</string>
+</resources>

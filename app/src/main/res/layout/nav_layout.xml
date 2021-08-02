@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorNull">
+
+    <include
+        android:id="@+id/navHeader"
+        layout="@layout/nav_header" />
+
+    <TextView
+        android:id="@+id/tvContact"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:autoLink="email"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawablePadding="16dp"
+        android:focusable="true"
+        android:padding="14dp"
+        android:text="@string/contact_us"
+        android:textColor="@color/text"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_round_email_24"
+        app:drawableTint="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/navHeader" />
+
+    <TextView
+        android:id="@+id/tvMode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:autoLink="email"
+        android:background="?attr/selectableItemBackground"
+        android:clickable="true"
+        android:drawablePadding="16dp"
+        android:focusable="true"
+        android:padding="14dp"
+        android:text="@string/night_mode"
+        android:textColor="@color/text"
+        android:textSize="16sp"
+        app:drawableStartCompat="@drawable/ic_baseline_dark_mode_24"
+        app:drawableTint="@color/text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvContact" />
+
+
+    <TextView
+        android:id="@+id/tvInfo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        android:padding="14dp"
+        android:paddingStart="14dp"
+        android:paddingEnd="14dp"
+        android:text="@string/designedBy"
+        android:textAlignment="center"
+        android:textColor="@color/text"
+        android:textSize="32sp"
+        android:textStyle="italic"
+        app:layout_constraintBottom_toBottomOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

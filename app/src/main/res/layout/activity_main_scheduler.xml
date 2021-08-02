@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/coordinator_l"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorNull"
+    android:fitsSystemWindows="true">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/colorNull"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="16dp">
+
+            <EditText
+                android:id="@+id/etContact"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_edit_text"
+                android:hint="Phone number"
+                android:inputType="phone"
+                android:paddingStart="12dp"
+                android:paddingEnd="12dp"
+                android:textColor="@color/text"
+                android:textColorHint="@color/etHintText"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintWidth_percent=".75" />
+
+            <EditText
+                android:id="@+id/etMessage"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="14dp"
+                android:background="@drawable/bg_edit_text"
+                android:hint="Message"
+                android:inputType="textMultiLine"
+                android:textAlignment="center"
+                android:textColor="@color/text"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHeight_percent=".2"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/etContact" />
+
+            <ImageButton
+                android:id="@+id/pickContact"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="14dp"
+                android:background="@drawable/bg_btn"
+                android:onClick="pickAContactNumber"
+                android:src="@drawable/ic_baseline_perm_contact_calendar_24"
+                app:layout_constraintBottom_toBottomOf="@+id/etContact"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/etContact"
+                app:layout_constraintTop_toTopOf="parent"
+                app:tint="@color/white" />
+
+            <DatePicker
+                android:id="@+id/date_p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:calendarTextColor="@color/text"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner"
+                app:layout_constraintTop_toBottomOf="@id/etMessage" />
+
+            <ru.ifr0z.timepickercompact.TimePickerCompact
+                android:id="@+id/time_p"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/date_p"
+                android:numbersTextColor="@color/text"
+                android:timePickerMode="spinner"
+                app:layout_constraintTop_toBottomOf="@id/date_p" />
+
+            <RadioGroup
+                android:id="@+id/radioGroup"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="clip_horizontal"
+                android:orientation="horizontal"
+                android:visibility="gone"
+                app:layout_constraintBottom_toTopOf="@id/btnSend"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/time_p"
+                app:layout_constraintWidth_percent=".7">
+
+                <RadioButton
+                    android:id="@+id/sim1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:checked="true"
+                    android:gravity="center"
+                    android:text="Sim 1"
+                    android:textColor="@color/text"
+                    android:textStyle="bold" />
+
+                <RadioButton
+                    android:id="@+id/sim2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:gravity="center"
+                    android:text="Sim 2"
+                    android:textColor="@color/text"
+                    android:textStyle="bold" />
+            </RadioGroup>
+
+            <TextView
+                android:id="@+id/btnSend"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/bg_btn"
+                android:gravity="center"
+                android:onClick="scheduleMessage"
+                android:paddingTop="12dp"
+                android:paddingBottom="12dp"
+                android:text="Schedule SMS"
+                android:textColor="@color/white"
+                android:layout_marginTop="12dp"
+                android:textSize="18sp"
+                app:layout_constraintTop_toBottomOf="@id/radioGroup"/>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
